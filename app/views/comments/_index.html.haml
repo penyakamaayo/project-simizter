@@ -1,0 +1,17 @@
+.comments_section
+  .container
+    .row
+      .col-md-12
+        %p#notice
+          = notice
+    - comments.each do |comment|
+      .row.comments_tab
+        .col-md-12.border-top
+          %comment_body 
+            = comment.body
+          %reply_link
+            = link_to raw('<i class="fa fa-reply" aria-hidden="true"></i> Reply'), comment
+          %br
+          %commented_by
+            = User.find(comment.user_id).username
+            commented on #{@post.created_at.strftime("%B %d %Y, %l:%M%P")}
