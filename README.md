@@ -1,3 +1,3 @@
-# StackUnderFlow
+# project simz
 
-This is a bootleg stackoverflow Q&A made by I with Ruby on Rails.
+just another bootleg reddit/stackoverflow by us
