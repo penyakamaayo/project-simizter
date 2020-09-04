@@ -1,0 +1,35 @@
+<div class="comments_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+    </div>
+    <% comments.each do |comment| %>
+      <% 
+        id = comment.user_id 
+        data = JSON.parse(
+          open("http://localhost:1212/v1/accounts/#{id}" 
+          ).read, symbolize_names: true
+        )[:data]
+
+        first_name = data[:first_name]
+        last_name = data[:last_name]
+      %>
+      <div class="row comments_tab">
+        <div class="col-md-12 border-top">
+          <comment_body>
+            <%= comment.body %>
+          </comment_body>
+          <reply_link>
+            <%= link_to raw('<i class="fa fa-reply" aria-hidden="true"></i> Reply'), comment %>
+          </reply_link>
+          <br/>
+          <commented_by>
+            <%= first_name %> <%= last_name %>
+            commented on <%= @post.created_at.strftime("%B %d %Y, %l:%M%P")%>
+          </commented_by>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="indexp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 box mt">
+        <div class="row">
+          <div class="col-md 12 mt-0">
+            <% 
+              id = @post.user.id 
+              data = JSON.parse(
+                open("http://localhost:1212/v1/accounts/#{id}" 
+                ).read, symbolize_names: true
+              )[:data]
+
+              first_name = data[:first_name]
+              last_name = data[:last_name]
+            %>
+            <post_by_show>
+              <%= first_name %> <%= last_name %> posted on <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %> · <%= @post.upvotes.count %>
+              <% if @post.upvotes.count == 1 %>
+                upvote
+              <% else %>
+                upvotes
+              <% end %>
+              <br/>
+            </post_by_show>
+            <post_title>
+              <%= @post.title %>
+            </post_title>
+            <post_tags>
+              Tags:
+              <%= join_tags(@post) %>
+            </post_tags>
+            <post_body>
+              <%= simple_format @post.body %>
+            </post_body>
+            <% if true %>
+              <% vote = Upvote.new post_id: @post.id %>
+              <upvote>
+                <%= form_for vote, url: post_upvotes_path(post_id: @post.id), remote: true do |f| %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.submit 'UPVOTE THIS POST', class: 'upvote-submit' %>
+                <% end %>
+              </upvote>
+            <% end %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <%= render 'comments/index', comments: @post.comments %>
+            <%= render 'comments/form', comment: Comment.new, post_id: @post.id %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

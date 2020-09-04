@@ -1,0 +1,42 @@
+<div class="indexp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 box mt">
+        <div class="row">
+          <div class="col-md 12 mt-0">
+            <p id="notice">
+              <%= notice %>
+            </p>
+            <p></p>
+            <comment_show_body>
+              "
+              <%= @comment.body %>
+              "
+            </comment_show_body>
+            <p></p>
+            <% 
+              id = @comment.user_id 
+              data = JSON.parse(
+                open("http://localhost:1212/v1/accounts/#{id}" 
+                ).read, symbolize_names: true
+              )[:data]
+
+              first_name = data[:first_name]
+              last_name = data[:last_name]
+            %>
+            <comment_show_by>
+              <%= first_name %> <%= last_name %>
+              Commented On <%= @comment.created_at.strftime("%B %d %Y, %l:%M%P")%>
+            </comment_show_by>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <%= render 'replies/index', replies: @comment.replies %>
+            <%= render 'replies/form', reply: Reply.new , comment_id: @comment.id %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
