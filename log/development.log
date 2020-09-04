@@ -1190,3 +1190,3032 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 54ms (Views: 40.2ms | ActiveRecord: 3.0ms | Allocations: 18169)
 
 
+Started GET "/" for ::1 at 2020-09-03 23:14:12 +0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 36.6ms | Allocations: 24173)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 4.3ms | Allocations: 3852)
+  Rendered layouts/_footer.html.haml (Duration: 1.8ms | Allocations: 1554)
+Completed 200 OK in 128ms (Views: 111.2ms | ActiveRecord: 7.7ms | Allocations: 80216)
+
+
+Started GET "/users/sign_out" for ::1 at 2020-09-03 23:25:05 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:1212/
+Completed 302 Found in 19ms (ActiveRecord: 1.1ms | Allocations: 5531)
+
+
+Started GET "/" for ::1 at 2020-09-03 23:25:05 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 7.7ms | Allocations: 2258)
+  Rendered layouts/_header.html.haml (Duration: 3.3ms | Allocations: 183)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 1.3ms | Allocations: 12431)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-03 23:25:06 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/signup
+  Rendered devise/shared/_links.html.haml (Duration: 2.9ms | Allocations: 2827)
+  Rendered devise/sessions/new.html.haml within layouts/signup (Duration: 15.9ms | Allocations: 9628)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 22537)
+
+
+Started GET "/" for ::1 at 2020-09-04 21:51:15 +0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 41.0ms | Allocations: 24173)
+  Rendered layouts/_header.html.haml (Duration: 7.3ms | Allocations: 2885)
+  Rendered layouts/_footer.html.haml (Duration: 2.0ms | Allocations: 1554)
+Completed 200 OK in 151ms (Views: 131.7ms | ActiveRecord: 9.7ms | Allocations: 79120)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:51:43 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2493)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 3770)
+
+
+  
+ActionView::Template::Error (uninitialized constant Test):
+    1: <%= puts Test %> Testing
+  
+app/views/api/test.html.erb:1
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:52:00 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2248)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3666)
+
+
+  
+ActionView::Template::Error (uninitialized constant Testing):
+    1: <%=  Testing %>
+  
+app/views/api/test.html.erb:1
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:52:05 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.4ms | Allocations: 78)
+  Rendered layouts/_header.html.haml (Duration: 2.4ms | Allocations: 2872)
+  Rendered layouts/_footer.html.haml (Duration: 1.3ms | Allocations: 1551)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 18196)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:52:14 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 180)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 10171)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:52:14 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 1.7ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.2ms | Allocations: 10)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 10151)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:52:15 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 10151)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:55:33 +0800
+Processing by ApiController#test as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 644)
+
+
+  
+Errno::ENOENT (No such file or directory @ rb_sysopen - http://localhost:1212/v1/accounts):
+  
+app/controllers/api_controller.rb:3:in `initialize'
+app/controllers/api_controller.rb:3:in `open'
+app/controllers/api_controller.rb:3:in `test'
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:11 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 192)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 42ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 22774)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:13 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 22ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 10864)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:26 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 20ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 10870)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:52 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.4ms | Allocations: 82)
+  Rendered layouts/_header.html.haml (Duration: 3.2ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 1.5ms | Allocations: 1551)
+Completed 200 OK in 27ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 18840)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:52 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 180)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 29ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 10885)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:52 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 51ms (Views: 27.3ms | ActiveRecord: 0.0ms | Allocations: 10860)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:52 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 1.3ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 35ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 10998)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:53 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 2.1ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 70ms (Views: 51.7ms | ActiveRecord: 0.0ms | Allocations: 10866)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:53 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 39ms (Views: 31.5ms | ActiveRecord: 0.0ms | Allocations: 10870)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:56:53 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 43ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 10863)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:57:54 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.3ms | Allocations: 97)
+  Rendered layouts/_header.html.haml (Duration: 3.0ms | Allocations: 2867)
+  Rendered layouts/_footer.html.haml (Duration: 1.8ms | Allocations: 1551)
+Completed 200 OK in 37ms (Views: 30.9ms | ActiveRecord: 0.0ms | Allocations: 19609)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:58:00 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.6ms | Allocations: 180)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 60ms (Views: 36.1ms | ActiveRecord: 0.0ms | Allocations: 10879)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:58:07 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 21ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 10864)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:58:08 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 25ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 10870)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:58:24 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2180)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4291)
+
+
+  
+ActionView::Template::Error (undefined method `all' for #<Hash:0x00007f4c70070a30>
+Did you mean?  all?):
+    1: Testing 
+    2: <% @data.all %>
+  
+app/views/api/test.html.erb:2
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:58:34 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.5ms | Allocations: 89)
+  Rendered layouts/_header.html.haml (Duration: 3.1ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 1.4ms | Allocations: 1551)
+Completed 200 OK in 39ms (Views: 24.0ms | ActiveRecord: 0.0ms | Allocations: 18854)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:58:39 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 180)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 33ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 10884)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:58:39 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 10866)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 21:59:08 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2251)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 4355)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Hash:0x00007f4c7072a150>):
+    1: Testing 
+    2: <% @data.id %>
+  
+app/views/api/test.html.erb:2
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:00:34 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.6ms | Allocations: 183)
+  Rendered layouts/_header.html.haml (Duration: 3.3ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1551)
+Completed 200 OK in 31ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 18952)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:27 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.6ms | Allocations: 207)
+  Rendered layouts/_header.html.haml (Duration: 5.1ms | Allocations: 2852)
+  Rendered layouts/_footer.html.haml (Duration: 2.2ms | Allocations: 1550)
+Completed 200 OK in 68ms (Views: 59.0ms | ActiveRecord: 0.0ms | Allocations: 18952)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:30 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 180)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 20ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 10981)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:31 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 17ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 10959)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:31 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.4ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 1.2ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 59ms (Views: 39.7ms | ActiveRecord: 0.0ms | Allocations: 10961)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:31 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 21ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 10961)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:35 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 20ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 10963)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:35 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.3ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.9ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 39ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 10957)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:35 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 41ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 10963)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:35 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 10971)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:36 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.8ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 10959)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:37 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.3ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 34ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 10965)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:38 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 20ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 10966)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:38 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.2ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 19ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 10961)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:04:38 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.6ms | Allocations: 100)
+  Rendered layouts/_header.html.haml (Duration: 1.0ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 58ms (Views: 35.7ms | ActiveRecord: 0.0ms | Allocations: 10971)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:05:09 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.3ms | Allocations: 115)
+  Rendered layouts/_header.html.haml (Duration: 2.7ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 1.7ms | Allocations: 1551)
+Completed 200 OK in 30ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 18872)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:05:38 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 2.2ms | Allocations: 125)
+  Rendered layouts/_header.html.haml (Duration: 7.0ms | Allocations: 2852)
+  Rendered layouts/_footer.html.haml (Duration: 5.1ms | Allocations: 1550)
+Completed 200 OK in 86ms (Views: 65.3ms | ActiveRecord: 0.0ms | Allocations: 18874)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:05:40 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 16)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 180)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 19ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 10888)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:06:23 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 1.8ms | Allocations: 135)
+  Rendered layouts/_header.html.haml (Duration: 3.1ms | Allocations: 2863)
+  Rendered layouts/_footer.html.haml (Duration: 1.5ms | Allocations: 1551)
+Completed 200 OK in 103ms (Views: 71.7ms | ActiveRecord: 0.0ms | Allocations: 18897)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:06:58 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1006)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 3103)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= '%{first_name}' % record %>
+    3: <% end %>
+  
+app/views/api/test.html.erb:2:in `%'
+app/views/api/test.html.erb:2
+app/views/api/test.html.erb:1:in `each'
+app/views/api/test.html.erb:1
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:07:11 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1003)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms | Allocations: 3100)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/api/test.html.erb:2:in `%'
+app/views/api/test.html.erb:2
+app/views/api/test.html.erb:1:in `each'
+app/views/api/test.html.erb:1
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:09:51 +0800
+Processing by ApiController#test as HTML
+  Rendering api/test.html.erb within layouts/application
+  Rendered api/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 24)
+  Rendered layouts/_header.html.haml (Duration: 2.8ms | Allocations: 2866)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1551)
+Completed 200 OK in 27ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 18828)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:13:14 +0800
+  
+ActionController::RoutingError (uninitialized constant ApiController):
+  
+actionpack (6.0.3.2) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:13:39 +0800
+Processing by AccountsController#test as HTML
+  Rendering accounts/test.html.erb within layouts/application
+  Rendered accounts/test.html.erb within layouts/application (Duration: 0.4ms | Allocations: 142)
+  Rendered layouts/_header.html.haml (Duration: 2.2ms | Allocations: 2866)
+  Rendered layouts/_footer.html.haml (Duration: 1.6ms | Allocations: 1551)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 19658)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:13:41 +0800
+Processing by AccountsController#test as HTML
+  Rendering accounts/test.html.erb within layouts/application
+  Rendered accounts/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 24)
+  Rendered layouts/_header.html.haml (Duration: 0.8ms | Allocations: 180)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 33ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 10895)
+
+
+Started GET "/v1/accounts/1" for ::1 at 2020-09-04 22:18:38 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+  Rendered layouts/_header.html.haml (Duration: 2.4ms | Allocations: 2866)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1551)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 18878)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 22:18:44 +0800
+Processing by AccountsController#test as HTML
+  Rendering accounts/test.html.erb within layouts/application
+  Rendered accounts/test.html.erb within layouts/application (Duration: 0.4ms | Allocations: 140)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 180)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 22ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 11153)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:18:47 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 10152)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:19:50 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 97)
+  Rendered layouts/_header.html.haml (Duration: 3.6ms | Allocations: 2866)
+  Rendered layouts/_footer.html.haml (Duration: 1.9ms | Allocations: 1551)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms | Allocations: 18897)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:22:51 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 191)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 11774)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:22:53 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 10828)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:22:54 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 19ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 10814)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:23:22 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 109)
+  Rendered layouts/_header.html.haml (Duration: 5.6ms | Allocations: 2852)
+  Rendered layouts/_footer.html.haml (Duration: 2.5ms | Allocations: 1550)
+Completed 200 OK in 93ms (Views: 63.6ms | ActiveRecord: 0.0ms | Allocations: 18804)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:23:38 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+  Rendered layouts/_header.html.haml (Duration: 3.6ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 1.5ms | Allocations: 1551)
+Completed 200 OK in 42ms (Views: 34.9ms | ActiveRecord: 0.0ms | Allocations: 18807)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:41:59 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1005)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 3057)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:42:35 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 447.3ms | Allocations: 221192)
+Completed 500 Internal Server Error in 457ms (ActiveRecord: 0.0ms | Allocations: 223247)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `record' for #<#<Class:0x0000563d03f7fe18>:0x0000563d03faa2a8>):
+    1:  <%= "%{first_name}" % record %>
+  
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:42:44 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1003)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 3055)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:43:12 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1022)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3075)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% @data do |record| %>
+ <%= "%{first_name}" % record %>
+<% end %>
+):
+1:    <% @data do |record| %>
+2:     <%= "%{first_name}" % record %>
+3:    <% end %>
+  
+app/views/accounts/show.html.erb:1: syntax error, unexpected do, expecting end
+app/views/accounts/show.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/accounts/show.html.erb:1: syntax error, unexpected do, expecting end
+app/views/accounts/show.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/accounts/show.html.erb:1: syntax error, unexpected do, expecting end
+app/views/accounts/show.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/accounts/show.html.erb:1: syntax error, unexpected do, expecting end
+app/views/accounts/show.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/accounts/show.html.erb:1: syntax error, unexpected do, expecting end
+app/views/accounts/show.html.erb:5: syntax error, unexpected end, expecting end-of-input
+app/views/accounts/show.html.erb:1: syntax error, unexpected do, expecting end
+app/views/accounts/show.html.erb:5: syntax error, unexpected end, expecting end-of-input
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:43:17 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1003)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3055)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:43:48 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 102)
+  Rendered layouts/_header.html.haml (Duration: 3.6ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 2.1ms | Allocations: 1551)
+Completed 200 OK in 32ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 18817)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:44:02 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+  Rendered layouts/_header.html.haml (Duration: 3.4ms | Allocations: 2852)
+  Rendered layouts/_footer.html.haml (Duration: 2.1ms | Allocations: 1550)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 18776)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:44:04 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_header.html.haml (Duration: 0.8ms | Allocations: 180)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 10829)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:44:07 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+  Rendered layouts/_header.html.haml (Duration: 3.2ms | Allocations: 2852)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1550)
+Completed 200 OK in 29ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 18766)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:44:10 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 84)
+  Rendered layouts/_header.html.haml (Duration: 7.6ms | Allocations: 2852)
+  Rendered layouts/_footer.html.haml (Duration: 2.3ms | Allocations: 1550)
+Completed 200 OK in 72ms (Views: 41.6ms | ActiveRecord: 0.0ms | Allocations: 18772)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:44:15 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 994)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 3042)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= @data.[4] %>
+):
+1:    <%= @data.[4] %>
+  
+app/views/accounts/show.html.erb:1: syntax error, unexpected '['
+app/views/accounts/show.html.erb:3: syntax error, unexpected end, expecting ')'
+app/views/accounts/show.html.erb:1: syntax error, unexpected '['
+app/views/accounts/show.html.erb:3: syntax error, unexpected end, expecting ')'
+app/views/accounts/show.html.erb:1: syntax error, unexpected '['
+app/views/accounts/show.html.erb:3: syntax error, unexpected end, expecting ')'
+app/views/accounts/show.html.erb:1: syntax error, unexpected '['
+app/views/accounts/show.html.erb:3: syntax error, unexpected end, expecting ')'
+app/views/accounts/show.html.erb:1: syntax error, unexpected '['
+app/views/accounts/show.html.erb:3: syntax error, unexpected end, expecting ')'
+app/views/accounts/show.html.erb:1: syntax error, unexpected '['
+app/views/accounts/show.html.erb:3: syntax error, unexpected end, expecting ')'
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:44:26 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+  Rendered layouts/_header.html.haml (Duration: 2.3ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 1.1ms | Allocations: 1551)
+Completed 200 OK in 27ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 18815)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:44:39 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1486)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms | Allocations: 3529)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: <%= @data[0][1] %>
+  
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:44:45 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2113)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 4163)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for #<Hash:0x0000563d040aa388>):
+    1: <%= @data.first_name %>
+  
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:44:51 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1003)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 3053)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:53:39 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 887)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 2091)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started POST "/__web_console/repl_sessions/6f63834bbe1e36f0f3a993370c511083/trace" for ::1 at 2020-09-04 22:53:43 +0800
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:54:05 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 161)
+  Rendered layouts/_header.html.haml (Duration: 2.2ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1551)
+Completed 200 OK in 47ms (Views: 34.2ms | ActiveRecord: 0.0ms | Allocations: 18879)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:54:34 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 146)
+  Rendered layouts/_header.html.haml (Duration: 2.9ms | Allocations: 2852)
+  Rendered layouts/_footer.html.haml (Duration: 1.6ms | Allocations: 1550)
+Completed 200 OK in 51ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 18839)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:54:41 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1003)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 3048)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:54:47 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 159)
+  Rendered layouts/_header.html.haml (Duration: 3.3ms | Allocations: 2863)
+  Rendered layouts/_footer.html.haml (Duration: 2.0ms | Allocations: 1551)
+Completed 200 OK in 59ms (Views: 41.0ms | ActiveRecord: 0.0ms | Allocations: 18880)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:55:20 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1006)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 3060)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{:first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:55:23 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1003)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3057)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:55:31 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1003)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 3057)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:55:37 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1003)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 3057)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:55:42 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 145)
+  Rendered layouts/_header.html.haml (Duration: 2.2ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 1.8ms | Allocations: 1551)
+Completed 200 OK in 27ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 18856)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:55:49 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 159)
+  Rendered layouts/_header.html.haml (Duration: 2.7ms | Allocations: 2852)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1550)
+Completed 200 OK in 35ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 18850)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 22:57:13 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1003)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 3060)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1: <% @data.each do |record| %>
+    2:  <%= "%{first_name}" % record %>
+    3: <% end %>
+  
+app/views/accounts/show.html.erb:2:in `%'
+app/views/accounts/show.html.erb:2
+app/views/accounts/show.html.erb:1:in `each'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 23:22:03 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 369.8ms | Allocations: 221206)
+Completed 500 Internal Server Error in 387ms (ActiveRecord: 0.0ms | Allocations: 223272)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `data' for #<#<Class:0x00007f4c70065d10>:0x00007f4c70064078>
+Did you mean?  @data):
+    1:  <%= "%{first_name}" % data %>
+  
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 23:22:09 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 94)
+  Rendered layouts/_header.html.haml (Duration: 2.1ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 14.9ms | Allocations: 1555)
+Completed 200 OK in 39ms (Views: 32.9ms | ActiveRecord: 0.0ms | Allocations: 18825)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-04 23:23:35 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/signup
+  Rendered devise/shared/_links.html.haml (Duration: 2.4ms | Allocations: 2828)
+  Rendered devise/sessions/new.html.haml within layouts/signup (Duration: 12.0ms | Allocations: 11104)
+Completed 200 OK in 43ms (Views: 25.3ms | ActiveRecord: 5.8ms | Allocations: 31611)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-09-04 23:23:43 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R5yHKeu2Iy+OdALhzJP/eXDrJ24QGKkBCH9GU8/mdHHQC1X2Nwt6FV3uPNb3vps/1+YZxCW8q+LSokF0pb2OcA==", "user"=>{"username"=>"testingni", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "testingni"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 19ms (ActiveRecord: 1.8ms | Allocations: 2380)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R5yHKeu2Iy+OdALhzJP/eXDrJ24QGKkBCH9GU8/mdHHQC1X2Nwt6FV3uPNb3vps/1+YZxCW8q+LSokF0pb2OcA==", "user"=>{"username"=>"testingni", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.haml within layouts/signup
+  Rendered devise/shared/_links.html.haml (Duration: 0.3ms | Allocations: 141)
+  Rendered devise/sessions/new.html.haml within layouts/signup (Duration: 2.6ms | Allocations: 1179)
+Completed 200 OK in 279ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 11521)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-04 23:23:49 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/signup
+  Rendered devise/shared/_links.html.haml (Duration: 0.7ms | Allocations: 141)
+  Rendered devise/sessions/new.html.haml within layouts/signup (Duration: 8.2ms | Allocations: 1162)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 11129)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:23:51 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 24.1ms | Allocations: 13076)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 172)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 40ms (Views: 30.2ms | ActiveRecord: 4.6ms | Allocations: 26508)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-04 23:23:56 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/signup
+  Rendered devise/shared/_links.html.haml (Duration: 0.4ms | Allocations: 141)
+  Rendered devise/sessions/new.html.haml within layouts/signup (Duration: 31.6ms | Allocations: 1175)
+Completed 200 OK in 51ms (Views: 47.0ms | ActiveRecord: 0.0ms | Allocations: 11159)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-09-04 23:23:58 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sp/Z88cwpwOPgvq85veNt59lO67FBAHNDuJIEV7oXeolCAssG43+OVwYxIvd2unxOGgFBPCgAy7UP082NLOn6w==", "user"=>{"username"=>"ey123123", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "ey123123"], ["LIMIT", 1]]
+Redirected to http://localhost:1234/
+Completed 302 Found in 332ms (ActiveRecord: 1.2ms | Allocations: 3971)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:23:58 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 4.4ms | Allocations: 2201)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.1ms | Allocations: 1043)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 1.2ms | Allocations: 13244)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 23:24:11 +0800
+Processing by AccountsController#test as HTML
+  Rendering accounts/test.html.erb within layouts/application
+  Rendered accounts/test.html.erb within layouts/application (Duration: 0.5ms | Allocations: 144)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 15.9ms | Allocations: 8443)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 36ms (Views: 25.1ms | ActiveRecord: 4.3ms | Allocations: 20362)
+
+
+Started GET "/v1/accounts/1" for ::1 at 2020-09-04 23:24:14 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1266)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/accounts_controller.rb:14:in `show'
+Started GET "/v1/accounts/1" for ::1 at 2020-09-04 23:24:56 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1225)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/accounts_controller.rb:14:in `show'
+Started GET "/v1/accounts/1" for ::1 at 2020-09-04 23:25:07 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 831)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3049)
+
+
+  
+ActionView::Template::Error (one hash required):
+    1:  <%= "%{first_name}" % @data %>
+  
+app/views/accounts/show.html.erb:1:in `%'
+app/views/accounts/show.html.erb:1
+Started GET "/v1/accounts/1" for ::1 at 2020-09-04 23:25:20 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 16.6ms | Allocations: 8433)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 34ms (Views: 25.3ms | ActiveRecord: 4.3ms | Allocations: 20028)
+
+
+Started GET "/v1/accounts/1" for ::1 at 2020-09-04 23:28:43 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:14:in `show'
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 96)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 35ms (Views: 14.1ms | ActiveRecord: 3.7ms | Allocations: 19958)
+
+
+Started GET "/v1/accounts/1" for ::1 at 2020-09-04 23:28:45 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:14:in `show'
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 86)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 20ms (Views: 11.1ms | ActiveRecord: 0.4ms | Allocations: 11640)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:28:49 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 42.2ms | Allocations: 9375)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.4ms | Allocations: 1038)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 77ms (Views: 46.7ms | ActiveRecord: 12.2ms | Allocations: 23135)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 23:29:18 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:14:in `show'
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 86)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 18ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 11636)
+
+
+Started GET "/v1/accounts/3" for ::1 at 2020-09-04 23:29:25 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:14:in `show'
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 86)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 24ms (Views: 14.6ms | ActiveRecord: 0.3ms | Allocations: 11651)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 23:29:37 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:14:in `show'
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 86)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 23ms (Views: 14.7ms | ActiveRecord: 0.5ms | Allocations: 11644)
+
+
+Started GET "/v1/accounts/3" for ::1 at 2020-09-04 23:30:15 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:14:in `show'
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 86)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 18ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 11636)
+
+
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-09-04 23:36:25 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 7.4ms | Allocations: 2337)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.7ms | Allocations: 1038)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 2.3ms | Allocations: 13377)
+
+
+Started GET "/v1/accounts/" for ::1 at 2020-09-04 23:37:12 +0800
+Processing by AccountsController#test as HTML
+  Rendering accounts/test.html.erb within layouts/application
+  Rendered accounts/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 24)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.1ms | Allocations: 1044)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 46ms (Views: 15.7ms | ActiveRecord: 0.4ms | Allocations: 11780)
+
+
+Started GET "/v1/accounts/2" for ::1 at 2020-09-04 23:37:14 +0800
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:14:in `show'
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 86)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 23ms (Views: 13.9ms | ActiveRecord: 0.4ms | Allocations: 11634)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:37:49 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 17.9ms | Allocations: 2202)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 3.3ms | Allocations: 1037)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 88ms (Views: 81.0ms | ActiveRecord: 4.9ms | Allocations: 13252)
+
+
+Started GET "/users/sign_out" for ::1 at 2020-09-04 23:38:40 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:1234/
+Completed 302 Found in 13ms (ActiveRecord: 0.6ms | Allocations: 2919)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:38:40 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 9.5ms | Allocations: 2203)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 171)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 1.6ms | Allocations: 12360)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-04 23:38:42 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/signup
+  Rendered devise/shared/_links.html.haml (Duration: 1.4ms | Allocations: 153)
+  Rendered devise/sessions/new.html.haml within layouts/signup (Duration: 9.2ms | Allocations: 1239)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 0.0ms | Allocations: 11362)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-09-04 23:38:44 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.haml within layouts/signup
+  Rendered devise/shared/_error_messages.html.haml (Duration: 3.1ms | Allocations: 2153)
+  Rendered devise/shared/_links.html.haml (Duration: 0.4ms | Allocations: 130)
+  Rendered devise/registrations/new.html.haml within layouts/signup (Duration: 12.1ms | Allocations: 8567)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 18857)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-09-04 23:38:59 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eBBO3HLI6sQDZ+6P5TGnmaTrXwrdIUcspT/Xgap+v2Tm/tHbX4vH7R6sKGfi34BjlvCWOt8YsRC3QxtNdHtfKg==", "user"=>{"username"=>"testingni", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "testingni"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 15ms (ActiveRecord: 1.5ms | Allocations: 1985)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eBBO3HLI6sQDZ+6P5TGnmaTrXwrdIUcspT/Xgap+v2Tm/tHbX4vH7R6sKGfi34BjlvCWOt8YsRC3QxtNdHtfKg==", "user"=>{"username"=>"testingni", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.haml within layouts/signup
+  Rendered devise/shared/_links.html.haml (Duration: 0.2ms | Allocations: 141)
+  Rendered devise/sessions/new.html.haml within layouts/signup (Duration: 1.9ms | Allocations: 1179)
+Completed 200 OK in 302ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 11017)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-09-04 23:39:05 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cGJh6CqCgBiWr9g4G383KD4ZbT1qw6yGcZzzyoKw5N3ujP7vB8GtMYtkHtAckRDSDAKkDWj6Wrpj4D8GXLUEkw==", "user"=>{"username"=>"ey123123", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "ey123123"], ["LIMIT", 1]]
+Redirected to http://localhost:1234/
+Completed 302 Found in 272ms (ActiveRecord: 0.5ms | Allocations: 2785)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:39:05 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 3.9ms | Allocations: 2207)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.5ms | Allocations: 1040)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 1.0ms | Allocations: 13250)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:42:19 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 18.0ms | Allocations: 10988)
+  Rendered layouts/_header.html.haml (Duration: 2.4ms | Allocations: 2760)
+  Rendered layouts/_footer.html.haml (Duration: 1.4ms | Allocations: 1550)
+Completed 200 OK in 61ms (Views: 31.9ms | ActiveRecord: 8.1ms | Allocations: 41148)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:42:22 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 4.5ms | Allocations: 1417)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 43ms (Views: 31.0ms | ActiveRecord: 1.0ms | Allocations: 13052)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:42:22 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 3.3ms | Allocations: 1411)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 77)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 22ms (Views: 13.0ms | ActiveRecord: 0.8ms | Allocations: 13030)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:42:50 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 11.6ms | Allocations: 5148)
+  Rendered layouts/_header.html.haml (Duration: 2.5ms | Allocations: 2758)
+  Rendered layouts/_footer.html.haml (Duration: 1.5ms | Allocations: 1550)
+Completed 200 OK in 49ms (Views: 34.1ms | ActiveRecord: 1.4ms | Allocations: 24564)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:46:53 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 11.6ms | Allocations: 5131)
+  Rendered layouts/_header.html.haml (Duration: 3.8ms | Allocations: 2756)
+  Rendered layouts/_footer.html.haml (Duration: 1.3ms | Allocations: 1550)
+Completed 200 OK in 58ms (Views: 31.1ms | ActiveRecord: 1.5ms | Allocations: 24530)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:47:49 +0800
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 323ms (ActiveRecord: 0.0ms | Allocations: 158711)
+
+
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NameError (undefined local variable or method `post' for #<PostsController:0x00007f4c7013a1c8>
+Did you mean?  @posts):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-04 23:48:29 +0800
+Processing by PostsController#index as HTML
+Completed 404 Not Found in 8ms (ActiveRecord: 2.3ms | Allocations: 3881)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:8:in `index'
+Started GET "/" for ::1 at 2020-09-04 23:48:57 +0800
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 278ms (ActiveRecord: 0.0ms | Allocations: 158722)
+
+
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NameError (undefined local variable or method `post' for #<PostsController:0x0000563d03b94998>
+Did you mean?  @posts):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-04 23:49:02 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 14.1ms | Allocations: 7296)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 82)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 50ms (Views: 22.5ms | ActiveRecord: 6.3ms | Allocations: 29807)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:49:54 +0800
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 0.0ms | Allocations: 158695)
+
+
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NameError (undefined local variable or method `post' for #<PostsController:0x0000563d0061a128>
+Did you mean?  @posts):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started POST "/users/sign_in" for ::1 at 2020-09-04 23:50:12 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cGJh6CqCgBiWr9g4G383KD4ZbT1qw6yGcZzzyoKw5N3ujP7vB8GtMYtkHtAckRDSDAKkDWj6Wrpj4D8GXLUEkw==", "user"=>{"username"=>"ey123123", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:1234/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 3.1ms | Allocations: 9531)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:50:12 +0800
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 0.0ms | Allocations: 158740)
+
+
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NameError (undefined local variable or method `post' for #<PostsController:0x00007f4c7034e810>
+Did you mean?  @posts):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-04 23:51:32 +0800
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 257ms (ActiveRecord: 0.0ms | Allocations: 150340)
+
+
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NameError (undefined local variable or method `post' for #<PostsController:0x00007f4c7032c170>
+Did you mean?  @posts):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-04 23:51:38 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 12.7ms | Allocations: 7296)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 82)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 63ms (Views: 35.8ms | ActiveRecord: 6.5ms | Allocations: 29806)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:54:26 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 19.3ms | Allocations: 11863)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 5.7ms | Allocations: 17340)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name} %{last_name}" % @data
+    17:           = post.user.id
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-04 23:54:37 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 27.7ms | Allocations: 15283)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 3.3ms | Allocations: 17459)
+
+
+  
+ActionView::Template::Error (one hash required):
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = post.user.id
+    17:           = "%{first_name} %{last_name}" % @data
+  
+app/views/posts/index.html.haml:17:in `%'
+app/views/posts/index.html.haml:17
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-04 23:54:51 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 12.3ms | Allocations: 5902)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.8ms | Allocations: 8078)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name} %{last_name}" % @data
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "posts"."id" FROM "posts"[0m
+Started GET "/" for ::1 at 2020-09-04 23:57:02 +0800
+Processing by PostsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "posts"."id" FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/index.html.haml within layouts/application (Duration: 5.1ms | Allocations: 4956)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.5ms | Allocations: 11535)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass):
+     5:     .row
+     6:       .col-md-12
+     7:       %post_count 
+     8:         = @posts.count 
+     9:         questions have been asked.  
+    10:         = link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1"
+    11:     - @posts.each do |post|
+  
+app/views/posts/index.html.haml:8
+Started GET "/" for ::1 at 2020-09-04 23:57:16 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 13.9ms | Allocations: 7296)
+  Rendered layouts/_header.html.haml (Duration: 4.7ms | Allocations: 2761)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1551)
+Completed 200 OK in 70ms (Views: 31.4ms | ActiveRecord: 7.5ms | Allocations: 36809)
+
+
+Started GET "/posts/new" for ::1 at 2020-09-04 23:57:19 +0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.haml within layouts/application
+  Rendered tags/_form.html.haml (Duration: 4.4ms | Allocations: 2552)
+  Rendered posts/_form.html.haml (Duration: 46.6ms | Allocations: 15071)
+  Rendered posts/new.html.haml within layouts/application (Duration: 56.6ms | Allocations: 17384)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 88)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 79ms (Views: 61.9ms | ActiveRecord: 7.2ms | Allocations: 29101)
+
+
+Started POST "/posts" for ::1 at 2020-09-04 23:57:28 +0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FRCWuHFX8AV+Y+KtABFMFLjWEsfNZwyQVwZIjSH+lPAq1vz3cJkmdR+dbEpRsyXm5FPu94wimQZLqxxBVqUwyA==", "post"=>{"title"=>"post 2", "body"=>"testing", "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["title", "post 2"], ["body", "testing"], ["created_at", "2020-09-04 15:57:28.731349"], ["updated_at", "2020-09-04 15:57:28.731349"]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mTag Create (1.7ms)[0m  [1m[32mINSERT INTO "tags" ("post_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["post_id", 2], ["created_at", "2020-09-04 15:57:28.736330"], ["updated_at", "2020-09-04 15:57:28.736330"]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+Redirected to http://localhost:1234/posts/2
+Completed 302 Found in 34ms (ActiveRecord: 6.4ms | Allocations: 9101)
+
+
+Started GET "/posts/2" for ::1 at 2020-09-04 23:57:28 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:41:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18:in `show'
+  Rendering posts/show.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.haml:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.haml:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.haml:9
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/helpers/posts_helper.rb:3:in `map'
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/comments/_index.html.haml:7
+  Rendered comments/_index.html.haml (Duration: 10.6ms | Allocations: 5025)
+  Rendered comments/_form.html.haml (Duration: 5.9ms | Allocations: 4167)
+  Rendered posts/show.html.haml within layouts/application (Duration: 72.7ms | Allocations: 30048)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 93ms (Views: 73.5ms | ActiveRecord: 9.7ms | Allocations: 42933)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:57:31 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 5.9ms | Allocations: 1459)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 77)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 52ms (Views: 22.1ms | ActiveRecord: 5.2ms | Allocations: 13093)
+
+
+Started GET "/" for ::1 at 2020-09-04 23:57:33 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 6.4ms | Allocations: 1457)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 77)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 47ms (Views: 24.4ms | ActiveRecord: 1.7ms | Allocations: 13073)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "posts"."id" FROM "posts"[0m
+Started GET "/" for ::1 at 2020-09-05 00:02:41 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 14.5ms | Allocations: 7342)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 82)
+  Rendered layouts/_footer.html.haml (Duration: 0.0ms | Allocations: 10)
+Completed 200 OK in 49ms (Views: 22.0ms | ActiveRecord: 6.3ms | Allocations: 29812)
+
+
+Started GET "/users/sign_out" for ::1 at 2020-09-05 00:04:57 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:1234/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 2551)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:04:57 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1316)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:05:04 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3814)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:05:16 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3813)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:06:02 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1315)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:06:18 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3784)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:06:19 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1313)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:06:26 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3825)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:12:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:06:39 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1325)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:12:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:06:45 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3814)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:06:47 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1313)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:07:09 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 17.1ms | Allocations: 8221)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 4.6ms | Allocations: 12960)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name} %{last_name}" % @data
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-05 00:07:11 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 4.0ms | Allocations: 2300)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 3584)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name} %{last_name}" % @data
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-05 00:07:12 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 7.2ms | Allocations: 2300)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.1ms | Allocations: 3584)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name} %{last_name}" % @data
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-05 00:07:28 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 10.0ms | Allocations: 5916)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms | Allocations: 8047)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name} " % @data
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-05 00:07:50 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 10.0ms | Allocations: 5913)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.8ms | Allocations: 8044)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name} %{last_name}" % @data
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-05 00:08:20 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 12.4ms | Allocations: 5913)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.7ms | Allocations: 8044)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name}" % @data
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-05 00:08:31 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 37.7ms | Allocations: 16428)
+  Rendered layouts/_header.html.haml (Duration: 3.0ms | Allocations: 2855)
+  Rendered layouts/_footer.html.haml (Duration: 1.9ms | Allocations: 1550)
+Completed 200 OK in 87ms (Views: 51.8ms | ActiveRecord: 5.9ms | Allocations: 35112)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:08:41 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 23.6ms | Allocations: 5904)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.8ms | Allocations: 8043)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name}" % @data
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-05 00:08:45 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 29.3ms | Allocations: 6660)
+  Rendered layouts/_header.html.haml (Duration: 2.4ms | Allocations: 2852)
+  Rendered layouts/_footer.html.haml (Duration: 1.4ms | Allocations: 1551)
+Completed 200 OK in 105ms (Views: 69.5ms | ActiveRecord: 4.1ms | Allocations: 25356)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-05 00:08:46 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/signup
+  Rendered devise/shared/_links.html.haml (Duration: 2.6ms | Allocations: 2744)
+  Rendered devise/sessions/new.html.haml within layouts/signup (Duration: 12.3ms | Allocations: 8554)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 21414)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-09-05 00:08:50 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.haml within layouts/signup
+  Rendered devise/shared/_error_messages.html.haml (Duration: 2.2ms | Allocations: 2145)
+  Rendered devise/shared/_links.html.haml (Duration: 0.5ms | Allocations: 96)
+  Rendered devise/registrations/new.html.haml within layouts/signup (Duration: 10.2ms | Allocations: 8433)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 18707)
+
+
+Started POST "/users" for ::1 at 2020-09-05 00:08:57 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A69nSjeq0TPLNp9upsq929kXNSTpp+c27ttI6RMWouOouyYvZt8pWS+D8DQJQy3r+2Eyeh1EBFu9/55o2Jn6UQ==", "user"=>{"username"=>"user2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "user2"], ["encrypted_password", "$2a$12$iPrpalei7BJLnDSFdLyXIOtXkMa1/EIHslU7KaXi3QGWrqwBCmnEG"], ["created_at", "2020-09-04 16:08:58.014520"], ["updated_at", "2020-09-04 16:08:58.014520"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:1234/
+Completed 302 Found in 349ms (ActiveRecord: 2.5ms | Allocations: 6851)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:08:58 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 5.2ms | Allocations: 2940)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.4ms | Allocations: 1075)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 38ms (Views: 29.2ms | ActiveRecord: 1.0ms | Allocations: 14788)
+
+
+Started GET "/posts/new" for ::1 at 2020-09-05 00:09:01 +0800
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/new.html.haml within layouts/application
+  Rendered tags/_form.html.haml (Duration: 4.5ms | Allocations: 2540)
+  Rendered posts/_form.html.haml (Duration: 45.1ms | Allocations: 14177)
+  Rendered posts/new.html.haml within layouts/application (Duration: 52.1ms | Allocations: 16497)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 88)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 75ms (Views: 57.6ms | ActiveRecord: 7.8ms | Allocations: 28213)
+
+
+Started POST "/posts" for ::1 at 2020-09-05 00:09:12 +0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J/eW8qOuTj8iV5DThlv1lCpFy5N6YCS6Tdz/yDnMNHP8MB6LxrnxxQfIPZ6F12Bo9KyTfISXeMZ82bd605c4mQ==", "post"=>{"title"=>"Hello", "body"=>"testi", "tags_attributes"=>{"0"=>{"name"=>"Helo"}}}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["title", "Hello"], ["body", "testi"], ["created_at", "2020-09-04 16:09:12.425598"], ["updated_at", "2020-09-04 16:09:12.425598"]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Helo"], ["post_id", 3], ["created_at", "2020-09-04 16:09:12.428679"], ["updated_at", "2020-09-04 16:09:12.428679"]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mTag Create (0.7ms)[0m  [1m[32mINSERT INTO "tags" ("post_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["post_id", 3], ["created_at", "2020-09-04 16:09:12.432308"], ["updated_at", "2020-09-04 16:09:12.432308"]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+Redirected to http://localhost:1234/posts/3
+Completed 302 Found in 21ms (ActiveRecord: 4.4ms | Allocations: 9114)
+
+
+Started GET "/posts/3" for ::1 at 2020-09-05 00:09:12 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:41:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18:in `show'
+  Rendering posts/show.html.haml within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.haml:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.haml:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.haml:9
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/helpers/posts_helper.rb:3:in `map'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/comments/_index.html.haml:7
+  Rendered comments/_index.html.haml (Duration: 6.6ms | Allocations: 4993)
+  Rendered comments/_form.html.haml (Duration: 17.2ms | Allocations: 4166)
+  Rendered posts/show.html.haml within layouts/application (Duration: 61.5ms | Allocations: 31006)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 86ms (Views: 71.8ms | ActiveRecord: 6.8ms | Allocations: 43904)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:09:15 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.haml:16
+  Rendered posts/index.html.haml within layouts/application (Duration: 16.7ms | Allocations: 3773)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 3.2ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 57ms (Views: 29.7ms | ActiveRecord: 2.6ms | Allocations: 15537)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:09:23 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 45.6ms | Allocations: 5918)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 2.6ms | Allocations: 8063)
+
+
+  
+ActionView::Template::Error (one hash required):
+    13:         .col-md-6.box
+    14:           %h4= link_to post.title, post_path(post)
+    15:           %posted_by Posted by 
+    16:           = "%{first_name}" % @data
+  
+app/views/posts/index.html.haml:16:in `%'
+app/views/posts/index.html.haml:16
+app/views/posts/index.html.haml:11
+Started GET "/" for ::1 at 2020-09-05 00:10:08 +0800
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `index'
+  Rendering posts/index.html.haml within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:8
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml within layouts/application (Duration: 20.3ms | Allocations: 11046)
+  Rendered layouts/_header.html.haml (Duration: 2.3ms | Allocations: 2760)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1550)
+Completed 200 OK in 68ms (Views: 36.5ms | ActiveRecord: 7.7ms | Allocations: 41168)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:10:34 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3762)
+
+
+  
+NoMethodError (undefined method `user' for nil:NilClass
+Did you mean?  super):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:10:49 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3706)
+
+
+  
+NoMethodError (undefined method `user_id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:10:54 +0800
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3762)
+
+
+  
+NoMethodError (undefined method `user' for nil:NilClass
+Did you mean?  super):
+  
+app/controllers/posts_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-09-05 00:17:01 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  Rendered posts/index.html.haml within layouts/application (Duration: 22.8ms | Allocations: 4529)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms | Allocations: 9262)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check .indexp
+  .container
+    .row
+      .col-md-12
+    .row
+      .col-md-12
+      %post_count 
+        = @posts.count 
+        questions have been asked.  
+        = link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1"
+    - @posts.each do |post|
+      .row
+        .col-md-6.box
+          %h4= link_to post.title, post_path(post)
+          %posted_by Posted by 
+          - id = post.user.id
+            - @data = JSON.parse(open("http://localhost:1212/v1/accounts/#{@id}" ).read, symbolize_names: true)[:data]
+              = "%{first_name}" % @data
+
+):
+1:    .indexp
+2:      .container
+3:        .row
+4:          .col-md-12
+5:        .row
+6:          .col-md-12
+7:          %post_count 
+8:            = @posts.count 
+9:            questions have been asked.  
+10:            = link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1"
+11:        - @posts.each do |post|
+12:          .row
+13:            .col-md-6.box
+14:              %h4= link_to post.title, post_path(post)
+15:              %posted_by Posted by 
+16:              - id = post.user.id
+17:                - @data = JSON.parse(open("http://localhost:1212/v1/accounts/#{@id}" ).read, symbolize_names: true)[:data]
+18:                  = "%{first_name}" % @data
+  
+app/views/posts/index.html.haml:19: syntax error, unexpected ensure, expecting end-of-input
+app/views/posts/index.html.haml:19: syntax error, unexpected ensure, expecting end-of-input
+app/views/posts/index.html.haml:19: syntax error, unexpected ensure, expecting end-of-input
+app/views/posts/index.html.haml:19: syntax error, unexpected ensure, expecting end-of-input
+app/views/posts/index.html.haml:19: syntax error, unexpected ensure, expecting end-of-input
+app/views/posts/index.html.haml:19: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/" for ::1 at 2020-09-05 00:26:10 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1065)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 2497)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="indexp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <post_count> 
+          <% @posts.count %> questions have been asked.
+            <%= link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1" %>
+          <% end %>
+        </post_count>
+      </div>
+    </div>
+  </div>
+</div>
+
+):
+1:    <div class="indexp">
+2:      <div class="container">
+3:        <div class="row">
+4:          <div class="col-md-12">
+5:          </div>
+6:        </div>
+7:        <div class="row">
+8:          <div class="col-md-12">
+9:            <post_count> 
+10:              <% @posts.count %> questions have been asked.
+11:                <%= link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1" %>
+12:              <% end %>
+13:            </post_count>
+14:          </div>
+15:        </div>
+16:      </div>
+17:    </div>
+  
+app/views/posts/index.html.erb:20: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:20: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:20: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:20: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:20: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:20: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2020-09-05 00:26:41 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1063)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2495)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <indexp>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <post_count> 
+          <% @posts.count %> questions have been asked.
+            <%= link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1" %>
+          <% end %>
+        </post_count>
+      </div>
+    </div>
+  </div>
+</indexp>
+):
+1:    <indexp>
+2:      <div class="container">
+3:        <div class="row">
+4:          <div class="col-md-12">
+5:          </div>
+6:        </div>
+7:        <div class="row">
+8:          <div class="col-md-12">
+9:            <post_count> 
+10:              <% @posts.count %> questions have been asked.
+11:                <%= link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1" %>
+12:              <% end %>
+13:            </post_count>
+14:          </div>
+15:        </div>
+16:      </div>
+17:    </indexp>
+  
+app/views/posts/index.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:19: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:19: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2020-09-05 00:26:48 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1061)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2493)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check   <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <post_count> 
+          <% @posts.count %> questions have been asked.
+            <%= link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1" %>
+          <% end %>
+        </post_count>
+      </div>
+    </div>
+  </div>
+):
+1:      <div class="container">
+2:        <div class="row">
+3:          <div class="col-md-12">
+4:          </div>
+5:        </div>
+6:        <div class="row">
+7:          <div class="col-md-12">
+8:            <post_count> 
+9:              <% @posts.count %> questions have been asked.
+10:                <%= link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1" %>
+11:              <% end %>
+12:            </post_count>
+13:          </div>
+14:        </div>
+15:      </div>
+  
+app/views/posts/index.html.erb:17: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:17: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:17: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:17: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:17: syntax error, unexpected end, expecting end-of-input
+app/views/posts/index.html.erb:17: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2020-09-05 00:28:20 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1517)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 19.7ms | Allocations: 11189)
+  Rendered layouts/_footer.html.haml (Duration: 1.3ms | Allocations: 1551)
+Completed 200 OK in 44ms (Views: 34.5ms | ActiveRecord: 8.2ms | Allocations: 27938)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:29:31 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 6957)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 6.0ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 1.3ms | Allocations: 1550)
+Completed 200 OK in 41ms (Views: 36.5ms | ActiveRecord: 2.7ms | Allocations: 25887)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:30:38 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1607)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 5.1ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1550)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 1.3ms | Allocations: 20547)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:33 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1612)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 4.0ms | Allocations: 3717)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1551)
+Completed 200 OK in 49ms (Views: 25.4ms | ActiveRecord: 1.1ms | Allocations: 20576)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:35 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1397)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 6.9ms | Allocations: 1039)
+  Rendered layouts/_footer.html.haml (Duration: 0.2ms | Allocations: 10)
+Completed 200 OK in 74ms (Views: 67.4ms | ActiveRecord: 3.3ms | Allocations: 12457)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:35 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1393)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.4ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 1.0ms | Allocations: 12441)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:36 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1393)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.4ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.9ms | Allocations: 12437)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:37 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1393)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.3ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.9ms | Allocations: 12455)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:37 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1393)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.8ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.8ms | Allocations: 12449)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:38 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1393)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.6ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.9ms | Allocations: 12447)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:38 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1393)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 3.6ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 1.5ms | Allocations: 12451)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:39 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1393)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.5ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 2.9ms | Allocations: 12443)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:42 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1393)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.0ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 1.0ms | Allocations: 12443)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:31:49 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1589)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 4.9ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 1.3ms | Allocations: 1550)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 1.3ms | Allocations: 20523)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:32:03 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1589)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 6.4ms | Allocations: 3728)
+  Rendered layouts/_footer.html.haml (Duration: 1.5ms | Allocations: 1551)
+Completed 200 OK in 58ms (Views: 53.4ms | ActiveRecord: 1.5ms | Allocations: 20530)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:33:59 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:20
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:20
+  Rendered posts/index.html.erb within layouts/application (Duration: 37.5ms | Allocations: 6546)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 8.0ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 2.9ms | Allocations: 1550)
+Completed 200 OK in 93ms (Views: 86.4ms | ActiveRecord: 3.8ms | Allocations: 25387)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:34:17 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:20
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:20
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 3961)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 4.0ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1550)
+Completed 200 OK in 44ms (Views: 37.1ms | ActiveRecord: 3.2ms | Allocations: 22889)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:34:58 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 3971)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 4.8ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 2.3ms | Allocations: 1550)
+Completed 200 OK in 55ms (Views: 48.0ms | ActiveRecord: 3.3ms | Allocations: 22893)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:35:31 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 3967)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 5.5ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 1.3ms | Allocations: 1550)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 1.9ms | Allocations: 22897)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:39:14 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 62.8ms | Allocations: 20440)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 3.9ms | Allocations: 3761)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1551)
+Completed 200 OK in 106ms (Views: 92.9ms | ActiveRecord: 9.0ms | Allocations: 42628)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:40:23 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 28.5ms | Allocations: 5947)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 3.8ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 1.2ms | Allocations: 1550)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 1.5ms | Allocations: 24879)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:42:48 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 36.3ms | Allocations: 5692)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.6ms | Allocations: 1038)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 56ms (Views: 51.1ms | ActiveRecord: 2.0ms | Allocations: 16755)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:44:12 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 67.6ms | Allocations: 5969)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 5.7ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 1.6ms | Allocations: 1550)
+Completed 200 OK in 110ms (Views: 103.9ms | ActiveRecord: 3.2ms | Allocations: 24901)
+
+
+Started GET "/posts/1" for ::1 at 2020-09-05 00:44:32 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `set_post'
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11:in `show'
+  Rendering posts/show.html.haml within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.haml:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.haml:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.haml:9
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/helpers/posts_helper.rb:3:in `map'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/comments/_index.html.haml:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_index.html.haml:16
+  Rendered comments/_index.html.haml (Duration: 22.1ms | Allocations: 10619)
+  Rendered comments/_form.html.haml (Duration: 6.3ms | Allocations: 4105)
+  Rendered posts/show.html.haml within layouts/application (Duration: 89.0ms | Allocations: 41809)
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 80)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 123ms (Views: 87.4ms | ActiveRecord: 16.3ms | Allocations: 54671)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:44:40 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 56.0ms | Allocations: 5693)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 2.3ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 74ms (Views: 67.4ms | ActiveRecord: 3.8ms | Allocations: 16734)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:46:15 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 61.3ms | Allocations: 5992)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 5.5ms | Allocations: 3717)
+  Rendered layouts/_footer.html.haml (Duration: 1.5ms | Allocations: 1551)
+Completed 200 OK in 93ms (Views: 82.0ms | ActiveRecord: 2.3ms | Allocations: 24945)
+
+
+Started GET "/" for ::1 at 2020-09-05 00:46:23 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 31.6ms | Allocations: 5990)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 5.0ms | Allocations: 3714)
+  Rendered layouts/_footer.html.haml (Duration: 1.4ms | Allocations: 1550)
+Completed 200 OK in 54ms (Views: 50.5ms | ActiveRecord: 1.4ms | Allocations: 24920)
+
+
