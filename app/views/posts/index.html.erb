@@ -20,7 +20,7 @@
           <% 
             id = post.user.id 
             data = JSON.parse(
-              open("http://localhost:1212/v1/accounts/#{id}" 
+              open("http://umz-api.herokuapp.com/v1/accounts/#{id}" 
               ).read, symbolize_names: true
             )[:data]
 
