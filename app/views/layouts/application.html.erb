@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <%= favicon_link_tag asset_path('favicon-16x16.png') %>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Project SIMZ</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= render partial: "layouts/header" %>
+    <%= yield %>
+    <%= render partial: "layouts/footer" %>
+  </body>
+</html>
