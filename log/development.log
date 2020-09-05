@@ -6415,3 +6415,250 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 3595ms (Views: 3583.4ms | ActiveRecord: 7.7ms | Allocations: 34232)
 
 
+Started GET "/posts/1" for ::1 at 2020-09-05 09:12:56 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-09-05 09:12:56 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/signup
+  Rendered devise/shared/_links.html.haml (Duration: 3.6ms | Allocations: 2828)
+  Rendered devise/sessions/new.html.haml within layouts/signup (Duration: 22.7ms | Allocations: 9346)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.0ms | Allocations: 22434)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-09-05 09:13:03 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bbyfTZ9HXfnR7SG3wgCH0HoPt0h8d2DB5lqo4wuowjAhurbpjkSFl78at0LN/ISlbHgTa3QN7xaXYf2+rmyxjA==", "user"=>{"username"=>"ey123123", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "ey123123"], ["LIMIT", 1]]
+Redirected to http://localhost:1234/posts/1
+Completed 302 Found in 272ms (ActiveRecord: 0.5ms | Allocations: 4634)
+
+
+Started GET "/posts/1" for ::1 at 2020-09-05 09:13:03 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:18
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:19
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/helpers/posts_helper.rb:3:in `map'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/comments/_index.html.erb:7
+  Rendered comments/_index.html.erb (Duration: 686.1ms | Allocations: 7326)
+  Rendered comments/_form.html.haml (Duration: 18.8ms | Allocations: 4124)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1450.0ms | Allocations: 32522)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 83)
+  Rendered layouts/_footer.html.haml (Duration: 0.2ms | Allocations: 10)
+Completed 200 OK in 1491ms (Views: 1469.3ms | ActiveRecord: 16.5ms | Allocations: 45420)
+
+
+Started GET "/posts/1" for ::1 at 2020-09-05 09:27:15 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:18
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:19
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/helpers/posts_helper.rb:3:in `map'
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/comments/_index.html.erb:7
+  Rendered comments/_index.html.erb (Duration: 763.0ms | Allocations: 1593)
+  Rendered comments/_form.html.haml (Duration: 2.2ms | Allocations: 399)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1434.6ms | Allocations: 6438)
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 76)
+  Rendered layouts/_footer.html.haml (Duration: 0.2ms | Allocations: 10)
+Completed 200 OK in 1481ms (Views: 1469.2ms | ActiveRecord: 5.6ms | Allocations: 19252)
+
+
+Started GET "/posts/1" for ::1 at 2020-09-05 09:28:41 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+Started GET "/posts/1" for ::1 at 2020-09-05 09:28:41 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+Started GET "/posts/1" for ::1 at 2020-09-05 09:28:41 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:18
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:19
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/helpers/posts_helper.rb:3:in `map'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/comments/_index.html.erb:7
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:18
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:19
+  [1m[36mTag Load (1.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/helpers/posts_helper.rb:3:in `map'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/comments/_index.html.erb:7
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:18
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:19
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/helpers/posts_helper.rb:3:in `map'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/comments/_index.html.erb:7
+  Rendered comments/_index.html.erb (Duration: 753.5ms | Allocations: 10313)
+  Rendered comments/_form.html.haml (Duration: 2.0ms | Allocations: 399)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1513.5ms | Allocations: 29551)
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 76)
+  Rendered layouts/_footer.html.haml (Duration: 0.2ms | Allocations: 10)
+Completed 200 OK in 1558ms (Views: 1545.9ms | ActiveRecord: 4.2ms | Allocations: 42192)
+
+
+  Rendered comments/_index.html.erb (Duration: 755.3ms | Allocations: 17227)
+  Rendered comments/_form.html.haml (Duration: 2.2ms | Allocations: 399)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1437.4ms | Allocations: 33625)
+  Rendered comments/_index.html.erb (Duration: 603.3ms | Allocations: 18185)
+  Rendered comments/_form.html.haml (Duration: 2.1ms | Allocations: 399)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1311.3ms | Allocations: 31792)
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 76)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 1556ms (Views: 1544.5ms | ActiveRecord: 5.7ms | Allocations: 52194)
+
+
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 76)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 1415ms (Views: 1404.1ms | ActiveRecord: 5.5ms | Allocations: 50482)
+
+
+Started GET "/" for ::1 at 2020-09-05 09:28:54 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 2222.3ms | Allocations: 6042)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 3.0ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 2238ms (Views: 2231.5ms | ActiveRecord: 4.7ms | Allocations: 17113)
+
+
+Started GET "/" for ::1 at 2020-09-05 09:35:03 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 2244.9ms | Allocations: 6467)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 8.2ms | Allocations: 3720)
+  Rendered layouts/_footer.html.haml (Duration: 1.7ms | Allocations: 1551)
+Completed 200 OK in 2298ms (Views: 2292.9ms | ActiveRecord: 3.5ms | Allocations: 25444)
+
+
+Started GET "/posts/1" for ::1 at 2020-09-05 09:35:08 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `set_post'
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:18
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "upvotes" WHERE "upvotes"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:19
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/helpers/posts_helper.rb:3:in `map'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/comments/_index.html.erb:7
+  Rendered comments/_index.html.erb (Duration: 754.4ms | Allocations: 1846)
+  Rendered comments/_form.html.haml (Duration: 23.7ms | Allocations: 4100)
+  Rendered posts/show.html.erb within layouts/application (Duration: 2167.0ms | Allocations: 13704)
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 80)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 2253ms (Views: 2219.3ms | ActiveRecord: 7.3ms | Allocations: 26492)
+
+
+Started GET "/" for ::1 at 2020-09-05 09:35:13 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 9280.2ms | Allocations: 6060)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:5
+  Rendered layouts/_header.html.haml (Duration: 8.8ms | Allocations: 1035)
+  Rendered layouts/_footer.html.haml (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 9343ms (Views: 9330.8ms | ActiveRecord: 7.5ms | Allocations: 17132)
+
+

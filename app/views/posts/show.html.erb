@@ -7,7 +7,7 @@
             <% 
               id = @post.user.id 
               data = JSON.parse(
-                open("http://umz-api.herokuapp.com/v1/accounts/#{id}" 
+                open("https://umz-api.herokuapp.com/v1/accounts/#{id}" 
                 ).read, symbolize_names: true
               )[:data]
 
