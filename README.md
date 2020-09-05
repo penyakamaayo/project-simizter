@@ -1,7 +1,5 @@
-# project simz
-<<<<<<< HEAD
+# Project SIMZ
 
-just another bootleg reddit/stackoverflow by us
-=======
-just another reddit/stackoverflow bootleg
->>>>>>> c3add2357b23e31883669ae0e53ed008cf0e7f75
+Hello! We are group _ . This is our take on integrated programming. A stack exchange/social networking/discussion forum whatever-you-call-it web app, that consumes a RESTful API all built with Ruby on Rails. See it live @ https://proj-simz.herokuapp.com
+
+Kent Bigno, Jose Peña, John Webert Fabria, Gilbert Abellanosa, Paul Torres, Kenneth Cuarteros.
